@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
         txtHelloWorld.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("myTag", "onClick: ye hua");
+                txtHelloWorld.animate().alpha(0).setDuration(2000);
+                txtHelloWorld.setText("Hi World!!");
+//                txtHelloWorld.animate().alpha(1).setDuration(2000);
+
             }
         });
 
