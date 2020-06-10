@@ -167,7 +167,7 @@
         android:layout_width="119dp"
         android:layout_height="113dp"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintEnd_toStartOf="@+id/heartPlayer"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/brain" />
@@ -179,7 +179,7 @@
         android:alpha="0.4"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/brainPlayer"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/heart" />
 

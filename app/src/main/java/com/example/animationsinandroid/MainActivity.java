@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         g = findViewById(R.id.gridLayout);
         hp = findViewById(R.id.heartPlayer);
         bp = findViewById(R.id.brainPlayer);
+
+        hp.animate().translationXBy(500).scaleX(0.5f).scaleY(0.5f).setDuration(250);
     }
 
     public void tapped(View view) {
@@ -48,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
                 turn = 2;
                 hp.setAlpha(1f);
                 bp.setAlpha(0.5f);
-
-
+                hp.animate().translationXBy(-500).scaleX(1f).scaleY(1f).setDuration(250);
+                bp.animate().translationXBy(-500).scaleX(0.5f).scaleY(0.5f).setDuration(250);
             } else if (turn == 2) {
                 v.setImageResource(R.drawable.heart);
                 int a = Integer.parseInt(v.getTag().toString());
@@ -57,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 turn = 1;
                 hp.setAlpha(0.5f);
                 bp.setAlpha(1f);
+                hp.animate().translationXBy(500).scaleX(0.5f).scaleY(0.5f).setDuration(250);
+                bp.animate().translationXBy(500).scaleX(1f).scaleY(1f).setDuration(250);
             }
 
             chances++;
@@ -82,6 +86,11 @@ public class MainActivity extends AppCompatActivity {
             hp.setAlpha(0.5f);
             bp.setAlpha(0.5f);
             chances = 0;
+            if (turn == 1){
+                bodyPart = "Heart";
+            }else {
+                bodyPart = "Brain";
+            }
             f.setVisibility(View.VISIBLE);
         }
     }
@@ -96,7 +105,12 @@ public class MainActivity extends AppCompatActivity {
         }
         f.setVisibility(View.GONE);
         chances = 0;
-
+        if (bodyPart == "Brain"){
+            hp.animate().translationXBy(500).scaleX(0.5f).scaleY(0.5f).setDuration(250);
+            bp.animate().translationXBy(500).scaleX(1f).scaleY(1f).setDuration(250);
+            bp.setAlpha(1f);
+            hp.setAlpha(0.5f);
+        }
 
     }
 
